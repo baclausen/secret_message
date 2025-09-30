@@ -12,9 +12,11 @@ def secret_message():
     select = int(input("Pick from 1 to 3: "))
     if select == 1:
         return cleaned_message.upper()
-    elif select == 2:
+    if select == 2:
         return cleaned_message[::-1]
-    else:
+    if select == 3:
         return len(cleaned_message)
-   
+    elif select <= 0 or select >= 4:
+        return False
+
 print(f" Hey {guest}, here's your secret code: {secret_message()}")
